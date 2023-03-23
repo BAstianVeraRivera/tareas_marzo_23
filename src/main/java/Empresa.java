@@ -23,10 +23,10 @@ public class Empresa {
 			buses.add(busNuevo);
 	}
 	public void darDeBaja() {
-		String busBuscado = input("Marca del bus: ");
+		String busBuscado = input("Nombre del bus: ");
 		for(Bus bus : buses){
 			if(bus.getNombreBus().equals(busBuscado)){
-				buses.remove(busBuscado);
+				buses.remove(bus);
 				String string = ("Bus eliminado");
 				JOptionPane.showMessageDialog (null, bus);
 				JOptionPane.showMessageDialog (null, string);
@@ -41,6 +41,7 @@ public class Empresa {
 					"Menu Principal\n"
 							+"1. Agregar bus nuevo\n"
 							+"2. Eliminar bus existente\n"
+							+"3. Mostrar todos los buses\n"
 							+"4. Salir"));
 
 			switch(opcion){
@@ -51,6 +52,9 @@ public class Empresa {
 					empresaDeTransporte.darDeBaja();
 					break;
 				case 3:
+					empresaDeTransporte.mostrarBuses();
+					break;
+				case 4:
 					JOptionPane.showMessageDialog(null, ":)");
 					break;
 
@@ -61,8 +65,18 @@ public class Empresa {
 			}
 
 
-		}while(opcion!=3);
+		}while(opcion!=4);
 
+	}
+	public void mostrarBuses() {
+		String string="";
+		for (int i=0;i<buses.size () ;i++) {
+			string+="Buses "+(i+1)+"\n";
+			string+="Marca: "+buses.get (i).getMarca() +" \n" ;
+			string+="Año de frabricación: "+buses.get (i).getAñoFabricacion() +" \n" ;
+			string+="Nombre bus: "+buses.get (i).getNombreBus() +" \n" ;
+		}
+		JOptionPane.showMessageDialog (null, string);
 	}
 
 
