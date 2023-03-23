@@ -1,9 +1,18 @@
 public class Bus {
 	private String marca;
 	private String añoFabricacion;
+	private String nombreBus;
+	public String toString(){
+		return this.marca+"\n"+this.añoFabricacion+"\n"+this.nombreBus;
+	}
+	public Bus (String marca, String añoFabricacion, String nombreBus){
+		this.marca=marca;
+		this.añoFabricacion=añoFabricacion;
+		this.nombreBus=nombreBus;
+	}
 
 	public String getMarca() {
-		return this.marca;
+		return marca;
 	}
 
 	public void setMarca(String marca) {
@@ -17,4 +26,13 @@ public class Bus {
 	public void setAñoFabricacion(String añoFabricacion) {
 		this.añoFabricacion = añoFabricacion;
 	}
+	public String getNombreBus() {
+		return nombreBus;
+	}
+
+	public void setNombreBus(String nombreBus) {
+		this.nombreBus = nombreBus;
+	}
+
+
 }
